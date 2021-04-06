@@ -1,0 +1,18 @@
+tests = [ {'description': 'PINA, PINB, PINC: 0x00 (0) => PORTD: 0x00 (0)',
+	'steps': [ {'inputs': [('PINA',0x00), ('PINB', 0x00), ('PINC', 0x00)], 'iterations': 5 } ],
+	'expected': [('PORTD',0x00)],
+}, 
+{'description': 'PINA, PINB, PINC: 0x28 (40) => PORTD: 0x78 (120)',
+	'steps': [ {'inputs': [('PINA',0x28), ('PINB', 0x28), ('PINC', 0x28)], 'iterations': 5 } ],
+	'expected': [('PORTD',0x78)],
+},
+{'description': 'PINA, PINB,  PINC: 0x55 (85) => PORTD: 0FF (255)',
+	'steps': [ {'inputs': [('PINA',0x55), ('PINB', 0x55), ('PINC', 0x55)], 'iterations': 5 } ],
+	'expected': [('PORTD',0xFF)],
+}, 
+{'description': 'PINA: 0x1C (28), PINB: 0x0F (15),  PINC: 0xB3 (179) => PORTD: 0DE (222)',
+        'steps': [ {'inputs': [('PINA',0x1C), ('PINB', 0x0F, ('PINC', 0xB3)], 'iterations': 5 } ],
+        'expected': [('PORTD',0xDE)],
+},
+
+]
